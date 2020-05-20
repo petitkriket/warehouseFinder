@@ -41,16 +41,14 @@ export default function WarehouseFloor({ activeItem }) {
   const [locations] = useState(boxes)
 
   return (
-    <div className="container mt-4">
-      <div className="row mx-auto">
-        {locations.map((location) => (
-          <StorageBox
-            id={location.id}
-            active={location.active}
-            key={location.id}
-          />
-        ))}
-      </div>
+    <div className="row mt-4 mx-auto">
+      {locations.map((location) => (
+        <StorageBox
+          id={location.id}
+          active={location.active}
+          key={location.id}
+        />
+      ))}
     </div>
   )
 }

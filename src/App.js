@@ -15,10 +15,10 @@ function App() {
 
   return (
     <div className="App">
-      <main className="container">
+      <main className="container mt-5">
         <WarehouseSearchInput onSubmit={handleQuery} />
         <WarehouseFloor activeItem={reference} />
-        <hr className="my-5" />
+        <hr className="my-4" />
         <WarehouseFloorSvg activeItem={reference} />
       </main>
     </div>
