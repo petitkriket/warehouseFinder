@@ -5,14 +5,18 @@ import data from './data.json'
 function StorageBox({ id, active }) {
   return (
     <div
-      className={active ? 'storage-box border shadow' : 'storage-box border'}
+      className={
+        active
+          ? 'storage-box border border border-light shadow'
+          : 'storage-box border'
+      }
     >
       <div className="text-center">{id}</div>
     </div>
   )
 }
 
-export default function WarehouseFloor(activeItem) {
+export default function WarehouseFloor({ activeItem }) {
   const [boxes, setBoxes] = useState(data)
 
   function toggleBox(id) {
@@ -29,8 +33,8 @@ export default function WarehouseFloor(activeItem) {
   }
 
   useEffect(() => {
-    if (activeItem['activeItem'] !== null) {
-      toggleBox(activeItem['activeItem'])
+    if (activeItem !== '') {
+      toggleBox(activeItem)
     }
   }, [activeItem])
 
